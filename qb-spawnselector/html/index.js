@@ -61,14 +61,14 @@ $(document).ready(function(){
     $(document).on("click", ".fa-map-marker-alt", function(e){
         if (pos != null) {
             $(".container").fadeOut(500)
-            $.post('https://qb-spawnselector/spawn', JSON.stringify({coords: pos}));
+            $.post('https://arabcodingteam-spawnselector/spawn', JSON.stringify({coords: pos}));
             $('#info').hide()
         }
     });
 
     $(document).on("click", ".lastspawn", function(e){
         $(".container").fadeOut(500)
-        $.post('https://qb-spawnselector/sonkonum', JSON.stringify({coords: pos}));
+        $.post('https://arabcodingteam-spawnselector/sonkonum', JSON.stringify({coords: pos}));
          $('#info').hide()
     });
 
