@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['arabcodingteam-core']:GetCoreObject()
 local LoginSafe, Cam = nil, false
 local spawns = {
     [1] = {coords = vector3(280.17, -590.73, 44.72), label = "Motel & Hospital"},
@@ -12,8 +12,8 @@ local spawns = {
 }
 
 
-RegisterNetEvent("qb-spawnselector:opennui")
-AddEventHandler("qb-spawnselector:opennui", function(pos)
+RegisterNetEvent("arabcodingteam-spawnselector:opennui")
+AddEventHandler("arabcodingteam-spawnselector:opennui", function(pos)
     SendNUIMessage({ data = spawns, lastpos = pos })
     openCam()
     SetNuiFocus(true, true)
@@ -28,19 +28,19 @@ end)
 RegisterNUICallback("spawn", function(data)
     DoScreenFadeOut(1000)
     SetNuiFocus(false, false)
-    TriggerEvent("qb-spawnselector:client:loadplayer", data.coords)
+    TriggerEvent("arabcodingteam-spawnselector:client:loadplayer", data.coords)
 end)
 
 RegisterNUICallback('sonkonum', function(data, cb)
     DoScreenFadeOut(500)
     SetNuiFocus(false, false)
     QBCore.Functions.GetPlayerData(function(PlayerData) 
-        TriggerEvent("qb-spawnselector:client:loadplayer", PlayerData.position)
+        TriggerEvent("arabcodingteam-spawnselector:client:loadplayer", PlayerData.position)
     end)
 end)
 
-RegisterNetEvent("qb-spawnselector:client:loadplayer")
-AddEventHandler("qb-spawnselector:client:loadplayer", function(coords)
+RegisterNetEvent("arabcodingteam-spawnselector:client:loadplayer")
+AddEventHandler("arabcodingteam-spawnselector:client:loadplayer", function(coords)
     delCam()
     doCamera(coords.x,coords.y,coords.z)
     DoScreenFadeOut(2)
@@ -54,7 +54,7 @@ AddEventHandler("qb-spawnselector:client:loadplayer", function(coords)
     DoScreenFadeIn(2500)
     TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
     TriggerEvent('QBCore:Client:OnPlayerLoaded')
-	TriggerEvent('qb-ambulance:check-death')
+	TriggerEvent('arabcodingteam-ambulance:check-death')
 end)
 
 function delCam()
