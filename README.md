@@ -1,5 +1,5 @@
-# qb-spawnselector-np
-qb-spawnselector np style freeeeeeeee 😜✌👌
+# arabcodingteam
+arabcodingteam-spawnselector np style freeeeeeeee 😜✌👌
 
 THIS IS NOT QB-SPAWN ⚠⚠⚠⚠⚠⚠⚠⚠
 
