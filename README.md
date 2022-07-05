@@ -60,7 +60,7 @@ RegisterNetEvent('qb-spawn:client:setupSpawns', function(cData, new, apps)
         })
         choosingSpawn = false
         Wait(500)
-        TriggerEvent("qb-spawnselector:opennui")
+        TriggerEvent("arabcodingteam-spawnselector:opennui")
     elseif new then
         SendNUIMessage({
             action = "setupAppartements",
